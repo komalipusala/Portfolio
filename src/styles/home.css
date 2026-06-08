@@ -1,0 +1,284 @@
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 6%;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 45px;
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* PROFILE IMAGE */
+.home-image {
+  position: relative;
+}
+
+.home-image::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 380px;
+  height: 380px;
+
+  transform: translate(-50%, -50%);
+
+  background: rgba(15, 118, 110, 0.15);
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  z-index: -1;
+}
+
+.home-image img {
+  width: 320px;
+  height: 320px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  border: 6px solid #0f766e;
+
+  box-shadow:
+    0 0 20px rgba(15, 118, 110, 0.3),
+    0 0 60px rgba(15, 118, 110, 0.2),
+    0 0 100px rgba(15, 118, 110, 0.1);
+
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+/* FLOAT EFFECT */
+@keyframes floatImage {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* CONTENT */
+.home-content {
+  max-width: 520px;
+}
+
+.home-content h4 {
+  font-size: 22px;
+  color: #6b7280;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.home-content h1 {
+  font-size: 62px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111827;
+}
+
+.home-content h1 span {
+  color: #0f766e;
+}
+
+.home-content h2 {
+  font-size: 32px;
+  margin-top: 15px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.typing-text {
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.home-description {
+  margin-top: 20px;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  color: #4b5563;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.social-icons a {
+  width: 55px;
+  height: 55px;
+
+  border: 2px solid #0f766e;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #0f766e;
+  font-size: 22px;
+
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #0f766e;
+  color: white;
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 25px rgba(15, 118, 110, 0.25);
+}
+
+/* BUTTONS */
+.home-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+/* DOWNLOAD CV */
+.resume-btn {
+  background: #0f766e;
+  color: white;
+
+  padding: 14px 32px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  box-shadow: 0 10px 25px rgba(15, 118, 110, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 18px 35px rgba(15, 118, 110, 0.35);
+}
+
+/* CONTACT BUTTON */
+.contact-btn {
+  border: 2px solid #0f766e;
+  color: #0f766e;
+
+  padding: 14px 32px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #0f766e;
+  color: white;
+
+  transform: translateY(-4px);
+}
+
+@media (max-width: 900px) {
+  .home-section {
+    min-height: auto;
+    padding: 110px 6% 50px;
+  }
+
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .home-image::before {
+    width: 220px;
+    height: 220px;
+    filter: blur(50px);
+  }
+
+  .home-image img {
+    width: 190px;
+    height: 190px;
+
+    animation: none;
+
+    border-width: 5px;
+  }
+
+  .home-content h4 {
+    display: none;
+  }
+
+  .home-content h1 {
+    font-size: 42px;
+    line-height: 1.15;
+  }
+
+  .home-content h2 {
+    font-size: 22px;
+    margin-top: 12px;
+  }
+
+  .home-description {
+    max-width: 100%;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    margin-top: 18px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 22px;
+  }
+
+  .social-icons a {
+    width: 48px;
+    height: 48px;
+
+    font-size: 20px;
+  }
+
+  .home-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 22px;
+  }
+
+  .resume-btn,
+  .contact-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
